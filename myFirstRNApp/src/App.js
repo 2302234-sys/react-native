@@ -2,23 +2,40 @@
 
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
-import ActivityIndicatorExample from './src/ActivityIndicator'; 
+import ActivityIndicatorExample from './ActivityIndicator';
+import ButtonExample from './Button'; 
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <ActivityIndicatorExample /> 
+    
+    <ScrollView contentContainerStyle={styles.container}>
+      
+      <View style={styles.section}>
+        <ActivityIndicatorExample />
+      </View>
+      
+      <View style={styles.section}>
+        <ButtonExample /> 
+      </View>
       
       <StatusBar style="auto" />
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+   
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingVertical: 20, 
   },
+  section: {
+    width: '100%', 
+    padding: 10,
+    marginBottom: 20, 
+    borderBottomWidth: 1, 
+    borderBottomColor: '#ccc',
+  }
 });
