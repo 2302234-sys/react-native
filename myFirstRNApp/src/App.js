@@ -10,6 +10,7 @@ import DisplayAnImageWithStyle from './image2';
 import ImageBackgroundExample from './imageBg';
 import KeyboardAvoidingComponent from './Keyboard';
 import ModalExample from './Modal';
+import PressableExample from './Press';
 export default function App() {
   
   return (
@@ -45,6 +46,10 @@ export default function App() {
 
             <View style={styles.section}>
               <ModalExample /> 
+            </View>
+
+            <View style={styles.section}>
+              <PressableExample /> 
             </View>
 
           </View>
