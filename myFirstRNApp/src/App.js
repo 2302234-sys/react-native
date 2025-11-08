@@ -6,6 +6,7 @@ import ActivityIndicatorExample from './ActivityIndicator';
 import ButtonExample from './Button'; 
 import Flatlistexample from './Flatlist'; 
 import DisplayAnImage from './image1'; 
+import DisplayAnImageWithStyle from './image2'; 
 
 export default function App() {
   
@@ -27,6 +28,10 @@ export default function App() {
             </View>
 
             <Text style={styles.listHeaderTitle}>--- FlatList Items Below ---</Text>
+
+            <View style={styles.section}>
+              <DisplayAnImageWithStyle /> 
+            </View>
           </View>
         )}
       />
