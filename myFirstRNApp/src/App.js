@@ -1,80 +1,59 @@
+// App.js
 
 import { StatusBar } from 'expo-status-bar';
-import { 
-  StyleSheet, 
-  View, 
-  ScrollView, 
-  Platform, 
-  Text 
-} from 'react-native';
-
+import { StyleSheet, View, Text, Platform } from 'react-native';
 import ActivityIndicatorExample from './ActivityIndicator';
 import ButtonExample from './Button'; 
 import Flatlistexample from './Flatlist'; 
-
+import DisplayAnImage from './image1'; 
 
 export default function App() {
-  return (
   
-    <ScrollView 
-        style={styles.scrollView} 
-       
-        contentContainerStyle={styles.contentContainer} 
-    >
-      
-     
-      <Text style={styles.testText}>LAYOUT IS WORKING!</Text>
-        <View style={styles.section}>
-        <ActivityIndicatorExample />
-      </View>
-      
-      <View style={styles.section}>
-        <ButtonExample /> 
-      </View>
+  return (
+    <View style={styles.container}>
+      <Flatlistexample 
+        ListHeaderComponent={() => (
+          <View>
+            <View style={styles.section}>
+              <ActivityIndicatorExample />
+            </View>
+            
+            <View style={styles.section}>
+              <ButtonExample /> 
+            </View>
+            
+            <View style={styles.section}>
+              <DisplayAnImage /> 
+            </View>
 
-      <View style={styles.section}>
-        <Flatlistexample /> 
-      </View>
-      
-      
+            <Text style={styles.listHeaderTitle}>--- FlatList Items Below ---</Text>
+          </View>
+        )}
+      />
       <StatusBar style="auto" />
-    </ScrollView>
+    </View>
   );
 }
 
-
 const styles = StyleSheet.create({
-  // 🔑 scrollView: REQUIRED to make the ScrollView take up the entire screen space.
-  scrollView: {
+  container: {
     flex: 1, 
     backgroundColor: '#fff',
-    // Adds space above content for the status bar on Android devices.
     paddingTop: Platform.OS === 'android' ? 30 : 0, 
   },
-  
-  // contentContainer: Styles the view that wraps all components inside the ScrollView.
-  contentContainer: {
-    // Centers content horizontally.
-    alignItems: 'center', 
-    // Adds space at the very bottom so the last item is not obscured.
-    paddingBottom: 50, 
-    // If your content is shorter than the screen, setting flexGrow: 1 can help fill the space.
-    flexGrow: 1, 
-  },
-  
   section: {
     marginVertical: 10,
-    width: '90%',
+    width: '100%',
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
     paddingBottom: 10,
     alignItems: 'center',
   },
-
-  testText: {
-    fontSize: 24,
-    color: 'green',
+  listHeaderTitle: {
+    fontSize: 18,
+    textAlign: 'center',
+    marginVertical: 15,
     fontWeight: 'bold',
-    margin: 50,
+    color: '#333',
   }
 });
