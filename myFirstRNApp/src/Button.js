@@ -1,13 +1,13 @@
-// src/Button.js
+
 
 import React from 'react';
 import {StyleSheet, Button, View, Text, Alert} from 'react-native';
-// Removed: import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
+
 
 const Separator = () => <View style={styles.separator} />;
 
 const ButtonExample = () => (
-  // Use a standard View
+  
   <View style={styles.container}> 
     <View>
       <Text style={styles.title}>
@@ -64,10 +64,10 @@ const ButtonExample = () => (
 
 const styles = StyleSheet.create({
   container: {
-    // 🔑 FIX: Removed flex: 1. Content defines the height.
+    
     justifyContent: 'center',
     marginHorizontal: 16,
-    paddingVertical: 20, // Added padding for better spacing
+    paddingVertical: 20, 
   },
   title: {
     textAlign: 'center',
