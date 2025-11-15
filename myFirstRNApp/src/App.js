@@ -2,6 +2,7 @@
 
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text, Platform } from 'react-native';
+import React from 'react'; 
 import ActivityIndicatorExample from './ActivityIndicator';
 import ButtonExample from './Button'; 
 import Flatlistexample from './Flatlist'; 
@@ -11,13 +12,22 @@ import ImageBackgroundExample from './imageBg';
 import KeyboardAvoidingComponent from './Keyboard';
 import ModalExample from './Modal';
 import PressableExample from './Press';
-export default function App() {
-  
+import RefreshExample from './refresh';
+import Viewscroll from './scroll';
+
+const App = () => { 
+
+
   return (
     <View style={styles.container}>
       <Flatlistexample 
         ListHeaderComponent={() => (
           <View>
+
+             <View style={styles.section}>
+              <RefreshExample /> 
+            </View>
+
             <View style={styles.section}>
               <ActivityIndicatorExample />
             </View>
@@ -52,13 +62,18 @@ export default function App() {
               <PressableExample /> 
             </View>
 
+            <View style={styles.section}>
+              <Viewscroll /> 
+            </View>
+
+
           </View>
         )}
       />
       <StatusBar style="auto" />
     </View>
   );
-}
+}; 
 
 const styles = StyleSheet.create({
   container: {
@@ -82,3 +97,6 @@ const styles = StyleSheet.create({
     color: '#333',
   }
 });
+
+
+export default App;
