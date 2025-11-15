@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { Expression }from './example/expression.jsx';
+import { Expression } from './example/expression.jsx';
+import { Attribute } from './example/attribute.jsx';
 
 import { createRoot } from 'react-dom/client';
 
@@ -59,6 +60,7 @@ function App() {
       <Button />
       <Examples/>
       <Expression />
+      <Attribute/>
     </>
   );
 }

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothes Image Gallery Selector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Clothes Image Gallery</h1>
+    <div class="form-container">
+        <form action="images.php" method="GET">
+            <label for="category">Selected Category:</label>
+            <select id="category" name="category" disabled>
+                <option value="clothes" selected>Clothes</option>
+            </select>
+            <input type="hidden" name="category" value="clothes">
+            
+            <button type="submit">Show Clothes Gallery</button>
+        </form>
+    </div>
+
+</body>
+</html>
